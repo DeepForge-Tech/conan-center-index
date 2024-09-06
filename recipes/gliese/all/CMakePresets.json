@@ -1,0 +1,79 @@
+{
+    "version": 2,
+    "configurePresets": [
+        {
+            "name": "MSBuild_Release_x64",
+            "displayName": "MSBuild_Release_x64",
+            "description": "Preset for build x64 with MSBuild under Windows",
+            "generator": "Ninja",
+            "architecture": {
+                "value": "x64",
+                "strategy": "external"
+            },
+            "binaryDir": "${sourceDir}/build/",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_TOOLCHAIN_FILE": "",
+                "CMAKE_C_COMPILER": "cl",
+                "CMAKE_CXX_COMPILER": "cl",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/",
+                "CMAKE_PROJECT_TOP_LEVEL_INCLUDES":"./cmake/conan_provider.cmake"
+            }
+        },
+        {
+            "name": "MSBuild_Debug_x64",
+            "displayName": "MSBuild_Debug_x64",
+            "description": "Sets Ninja generator, build and install directory",
+            "generator": "Ninja",
+            "architecture": {
+                "value": "x64",
+                "strategy": "external"
+            },
+            "binaryDir": "${sourceDir}/build/",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_C_COMPILER": "cl",
+                "CMAKE_CXX_COMPILER": "cl",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/",
+                "CMAKE_PROJECT_TOP_LEVEL_INCLUDES":"./cmake/conan_provider.cmake"
+            }
+        },
+        {
+            "name": "GCC_Release_x64",
+            "displayName": "GCC_Release_x64",
+            "description": "Sets Ninja generator, build and install directory",
+            "generator": "Ninja",
+            "architecture": {
+                "value": "x64",
+                "strategy": "external"
+            },
+            "binaryDir": "${sourceDir}/build/",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_TOOLCHAIN_FILE": "",
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_CXX_COMPILER": "g++",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/",
+                "CMAKE_PROJECT_TOP_LEVEL_INCLUDES":"./cmake/conan_provider.cmake"
+            }
+        },
+        {
+            "name": "GCC_Debug_x64",
+            "displayName": "GCC_Debug_x64",
+            "description": "Sets Ninja generator, build and install directory",
+            "generator": "Ninja",
+            "architecture": {
+                "value": "x64",
+                "strategy": "external"
+            },
+            "binaryDir": "${sourceDir}/build/",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_CXX_COMPILER": "g++",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/",
+                "CMAKE_PROJECT_TOP_LEVEL_INCLUDES":"./cmake/conan_provider.cmake"
+            }
+        }
+    ]
+}
